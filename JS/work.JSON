@@ -1,0 +1,25 @@
+{
+    "projects": [
+      {
+        "id": 1,
+        "title": "Payment System",
+        "description": "Develop an online payment system using monthly and annual costs.",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "status": "In Progress"
+      },
+      {
+        "id": 2,
+        "title": "Results System",
+        "description": "Display a results page.",
+        "technologies": ["HTML", "CSS"],
+        "status": "Completed"
+      },
+      {
+        "id": 3,
+        "title": "Portfolio Website",
+        "description": "Personal Portfolio.",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "status": "Planned"
+      }
+    ]
+  }
