@@ -1,40 +1,53 @@
-const display = document.querySelector("#display-data");
-
-function fetchJSONData() {
-    return fetch('JS/work.JSON')
-    .then((res) => {
-        if (!res.ok) {
-            throw new Error(`HTTP error! Status: ${res.status}`);
-        }
-        return res.json();
-    })
-    .catch((error) =>
-        console.error("Unable to fetch data", error));
-}
-
-async function displayDataInModal() {
+// Function to fetch JSON data
+async function fetchProjects() {
     try {
-        const data = await fetchJSONData();
-        const modalContent = document.querySelector(".modal-content");
-        const modalBody = modalContent.querySelector(".modal-body");
-
-        // Assuming there's only one project in the JSON for simplicity
-        const project = data.projects[0];
-        
-        // Populate modal with project data
-        modalBody.innerHTML = `
-            <p class="id">ID: ${project.id}</p>
-            <p class="title">Title: ${project.title}</p>
-            <p class="description">Description: ${project.description}</p>
-            <p class="technologies">Technologies: ${project.technologies.join(', ')}</p>
-            <p class="status">Status: ${project.status}</p>
-        `;
-    } catch (error) {
-        console.error("Error displaying data in modal:", error);
+        const response = await fetch('JS/work.JSON'); // Fetch JSON data from the specified URL
+        if (!response.ok) { // Check if the response is not OK
+            throw new Error('Failed to fetch data'); // Throw an error if fetching fails
+        }
+        const jsonData = await response.json(); // Parse the JSON data from the response
+        return jsonData.projects; // Return the 'projects' array from the JSON data
+    } catch (error) { // Catch any errors that occur during fetching or parsing
+        console.error('Error fetching projects:', error); // Log the error to the console
+        return []; // Return an empty array if an error occurs
     }
 }
 
-// Call the function to display data within the modal
-displayDataInModal();
+// Function to populate the modal content with project details
+function populateModal(modal, project) {
+    modal.querySelector('.id').textContent = `ID: ${project.id}`; // Set the ID text content
+    modal.querySelector('.title').textContent = `Title: ${project.title}`; // Set the title text content
+    modal.querySelector('.description').textContent = `Description: ${project.description}`; // Set the description text content
+    modal.querySelector('.technologies').textContent = `Technologies: ${project.technologies.join(', ')}`; // Set the technologies text content
+    modal.querySelector('.status').textContent = `Status: ${project.status}`; // Set the status text content
+}
 
-// Rest of your code for modal functionality...
+// Event listener for opening the modal when the first button is clicked
+document.getElementById('modal-trigger-1').addEventListener('click', async function() {
+    openModal(document.getElementById('myModal1')); // Open the modal
+    const projects = await fetchProjects(); // Fetch projects
+    if (projects.length > 0) { // If projects are fetched successfully
+        const project = projects.find(project => project.id === 1); // Find the project with ID 1
+        populateModal(document.getElementById('myModal1'), project); // Populate modal with project details
+    }
+});
+
+// Event listener for opening the modal when the second button is clicked
+document.getElementById('modal-trigger-2').addEventListener('click', async function() {
+    openModal(document.getElementById('myModal2')); // Open the modal
+    const projects = await fetchProjects(); // Fetch projects
+    if (projects.length > 0) { // If projects are fetched successfully
+        const project = projects.find(project => project.id === 2); // Find the project with ID 2
+        populateModal(document.getElementById('myModal2'), project); // Populate modal with project details
+    }
+});
+
+// Event listener for opening the modal when the third button is clicked
+document.getElementById('modal-trigger-3').addEventListener('click', async function() {
+    openModal(document.getElementById('myModal3')); // Open the modal
+    const projects = await fetchProjects(); // Fetch projects
+    if (projects.length > 0) { // If projects are fetched successfully
+        const project = projects.find(project => project.id === 3); // Find the project with ID 3
+        populateModal(document.getElementById('myModal3'), project); // Populate modal with project details
+    }
+});
