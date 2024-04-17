@@ -1,20 +1,13 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.body {
+    background: linear-gradient(312deg, #ff86a2, #FB7D59, #F8D842, #0082f3);
+    background-size: 400% 400%;
+    animation: animate 20s ease infinite;
+    padding-bottom: 50px;
 }
-
-
-body {
-    font-family: "Ubuntu", sans-serif;
-}
-
 
 .header {
     position: relative;
     z-index: 1;
-    background: linear-gradient(312deg, #0082f3, #ff86a2, #FB7D59, #F8D842);
     background-size: 400% 400%;
     width: 100%;
     height: 100%;
@@ -77,35 +70,60 @@ h2 {
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 80%; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
-.rich-text-block {
-    color: #000;
-    margin-top: 10px;
-    margin-bottom: 60px;
-    margin-right: 0;
-    font-family: Inter, sans-serif;
-    font-size: 20px;
-    padding-bottom: 100px;
+.image-wrapper {
+    width: 150px; 
+    height: 150px; 
+    overflow: hidden;
+    border-radius: 5px 0 0 5px; 
 }
 
-.rich-text-block h1 {
-    width: auto;
-    color: #000;
-    letter-spacing: -3px;
-    margin-bottom: 100px;
-    padding-bottom: 0;
-    font-size: 92px;
-    font-weight: 600;
-    line-height: 104px;
-    text-align: left;
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    flex: 1; 
+    padding: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px; 
+}
+
+
+@keyframes animate {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
 }
 
 .modal {
@@ -158,7 +176,9 @@ h2 {
     color: #F0B823;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {
+    padding: 2px 16px;
+}
 
 .modal-button {
     font-family: 'Quicksand', sans-serif;
@@ -181,39 +201,3 @@ h2 {
   color: #F0B823;
 }
 
-@media screen and (max-width: 991px) {
-    .rich-text-block h1 {
-        letter-spacing: -1px;
-        margin-bottom: 60px;
-        font-size: 56px;
-        line-height: 64px;
-    }
-
-    .container {
-        width: 100%;
-        max-width: 1200px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .container {
-        display: block;
-    }
-
-    .rich-text-block h1 {
-        font-size: 48px;
-        line-height: 56px;
-    }
-}
-
-@keyframes animate {
-    0% {
-        background-position: 0 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0 50%;
-    }
-}
