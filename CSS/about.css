@@ -1,0 +1,228 @@
+.container {
+    max-width: 1200px; 
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+}
+
+.container div {
+    flex: 1; 
+    max-width: 1000px; 
+    padding: 0 20px; 
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-me {
+    margin-bottom: 40px;
+    max-width: 1000;
+}
+
+.interests {
+    margin-bottom: -15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
+
+.interests-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.column {
+    width: 70%;
+}
+
+.interests-ul {
+    display: grid;
+    grid-template-columns: 140px 150px;
+}
+
+
+.body {
+    background: #f3bb2c;
+    background-size: 400% 400%;
+    animation: animate 20s ease infinite;
+    padding-bottom: 50px;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.header {
+    position: relative;
+    z-index: 1;
+    background-size: 400% 400%;
+    width: 100%;
+    height: 100%;
+    animation: animate 20s ease infinite;
+    padding-bottom: 50px;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(60% - 30px);
+    height: 2px;
+    background-color: black;
+}
+
+.header ul {
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.header ul li {
+    display: inline-block;
+    padding: 40px 15px;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+.header ul li a:hover {
+    background: #fff;
+    color: #000;
+}
+
+h2 {
+    color: #000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 100px;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h2,
+.header h1 {
+    text-align: center;
+}
+
+.header h2 {
+    font-size: 60px;
+    margin-top: 15vh;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.about-wrapper {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.header ul li:first-child {
+    padding-left: 0;
+}
+
+.header ul li:last-child {
+    padding-right: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-block {
+    overflow: hidden;
+}
+
+.main-content {
+    max-width: 1200px;
+    object-fit: fill;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    overflow: visible;
+}
+
+.about-me p {
+    font-size: 24px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    max-width: 1000px;
+}
+.interests ul {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about-me h2,
+.interests h2 {
+    color: #000;
+    font-size: 36px;    
+    margin-bottom: 5px;
+}
+
+.w-container:before,
+.w-container:after {
+    content: " ";
+    grid-area: 1 / 1 / 2 / 2;
+    display: table;
+}
+
+.container-2 {
+    max-width: 350px;
+    flex: 1;
+    padding-left: 40px;
+    padding-right: 60px;
+    position: static;
+}
+
+.container-3 {
+    max-width: 850px;
+    margin-bottom: 60px;
+    padding-right: 40px;
+}
+
+.w-container {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sidebar {
+    order: 1;
+    align-self: flex-end;
+    margin-right: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: Space Grotesk, sans-serif;
+}
+
+.sidebar h4 {
+    color: #000;
+    border-bottom: 3px #414ab2;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 24px
+}
